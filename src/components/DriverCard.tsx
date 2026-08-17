@@ -1,0 +1,9 @@
+import { Clock3, MapPin, Phone } from 'lucide-react'
+import type { Mototaxista } from '../types/mototaxista'
+import { DriverPhoto } from './DriverPhoto'
+import { VehicleInfo } from './VehicleInfo'
+
+export function DriverCard({ driver }: { driver: Mototaxista }) {
+  const available = driver.estado === 'disponible'
+  return <section aria-label="Carnet digital del conductor" className="overflow-hidden rounded-3xl border border-white/80 bg-amber-50 shadow-[0_18px_48px_-24px_rgba(15,23,42,.45)]"><div className="h-2 bg-amber-400" /><div className="p-5"><div className="flex items-center gap-4"><DriverPhoto photo={driver.foto} name={driver.nombre} /><div className="min-w-0"><p className="text-xs font-bold uppercase tracking-[.18em] text-slate-500">Tu conductor</p><h2 className="truncate text-2xl font-extrabold text-slate-900">{driver.nombre || 'Conductor'}</h2><span className={`mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold ${available ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`}><span className={`h-2 w-2 rounded-full ${available ? 'bg-emerald-500' : 'bg-rose-500'}`} />{available ? 'Disponible' : 'No disponible'}</span></div></div><div className="mt-5 grid gap-3"><VehicleInfo vehicle={driver.vehiculo} /><div className="grid grid-cols-1 gap-2 text-sm text-slate-700 sm:grid-cols-2">{driver.zonaTrabajo && <p className="flex items-center gap-2 rounded-xl bg-white/70 p-2.5"><MapPin size={16} className="shrink-0 text-amber-600" />{driver.zonaTrabajo}</p>}{driver.horario && <p className="flex items-center gap-2 rounded-xl bg-white/70 p-2.5"><Clock3 size={16} className="shrink-0 text-amber-600" />{driver.horario.inicio} – {driver.horario.fin}</p>}{driver.telefono && <p className="flex items-center gap-2 rounded-xl bg-white/70 p-2.5 sm:col-span-2"><Phone size={16} className="shrink-0 text-amber-600" />{driver.telefono}</p>}</div></div></div></section>
+}

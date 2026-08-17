@@ -1,0 +1,39 @@
+{
+  "nombre": "Samir Jhoner Gomez Alarcon",
+  "foto": "",
+  "telefono": "994357973",
+  "vehiculo": {
+    "placa": "4080-EC",
+    "color": "ROJO",
+    "modelo": "Mototaxi bajaj"
+  },
+  "zonaTrabajo": "Pisco, Ica",
+  "horario": {
+    "inicio": "06:30",
+    "fin": "21:30"
+  },
+  "estado": "disponible",
+  "whatsapp": {
+    "mensaje": "Hola, vi tu página de mototaxi y quisiera solicitar un viaje."
+  },
+  "servicios": [
+    {
+      "id": "recojo",
+      "titulo": "Recojo en mototaxi",
+      "descripcion": "Voy hasta tu ubicación para recogerte.",
+      "icono": "Bike"
+    },
+    {
+      "id": "escolar",
+      "titulo": "Movilidad escolar",
+      "descripcion": "Servicio para llevar y recoger escolares.",
+      "icono": "School"
+    },
+    {
+      "id": "almuerzos",
+      "titulo": "Entrega de almuerzos",
+      "descripcion": "Recojo y entrega de almuerzos dentro de mi zona de trabajo.",
+      "icono": "Utensils"
+    }
+  ]
+}
